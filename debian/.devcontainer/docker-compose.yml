@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  my-dev-container:
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+      args:
+        USERNAME: cafesao
+    image: my-dev-container        
+    volumes:
+      - ..:/workspace:cached
+    command: sleep infinity

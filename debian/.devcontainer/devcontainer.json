@@ -1,0 +1,23 @@
+{
+	"name": "MyDevContainer",
+	"dockerComposeFile": "./docker-compose.yml",
+	"service": "my-dev-container",
+	"workspaceFolder": "/workspace",
+	"features": {
+		"ghcr.io/devcontainers-contrib/features/neofetch:1": {},
+		"ghcr.io/devcontainers-contrib/features/wget-apt-get:1": {},
+		"ghcr.io/mikaello/devcontainer-features/modern-shell-utils:1": {},
+	},
+	"customizations": {
+		"vscode": {
+		  "settings": {
+			"terminal.integrated.defaultProfile.linux": "zsh",
+			"terminal.integrated.profiles.linux": { "zsh": { "path": "/bin/zsh" } }
+		  },
+		  "extensions": []
+		}
+	  },
+	  "forwardPorts": [],
+	  "postCreateCommand": "sh ./.devcontainer/postCreateCommand.sh",
+	  "remoteUser": "cafesao"
+}
