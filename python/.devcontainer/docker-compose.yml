@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  dev_container_python:
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+      args:
+        VARIANT: "3.12"
+        USERNAME: cafesao
+    image: dev_container_python:latest
+    user: cafesao    
+    volumes:
+      - ..:/workspace:cached
+      - /home/cafesao/.ssh:/home/cafesao/.ssh:cached      
+    command: sleep infinity

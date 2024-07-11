@@ -1,4 +1,8 @@
 #!/bin/bash
+
+# Start of the script
+echo "Starting setup..."
+
 # Install Powerline Fonts required for the Zsh Agnoster theme
 echo "Installing Powerline fonts..."
 git clone https://github.com/powerline/fonts.git
@@ -28,12 +32,30 @@ echo "Powerlevel10k theme installed."
 
 # Continue from the last echo statement
 echo "Copying .p10k.zsh to the home directory..."
-cp /workspace/.devcontainer/.p10k.zsh $HOME/.p10k.zsh
+cp ./.devcontainer/.p10k.zsh $HOME/.p10k.zsh
 echo ".p10k.zsh copied successfully."
 
 echo "Disable wizard"
 echo 'POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true' >> ~/.zshrc
+
+echo "Set p10k Theme"
 echo '[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh' >> ~/.zshrc
+
+## Install pyenv - Manual
+# curl https://pyenv.run | bash
+
+# echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshrc
+# echo '[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zshrc
+# echo 'eval "$(pyenv init -)"' >> ~/.zshrc
+
+## Install python 3.? - Manual
+#pyenv install 3.?
+#pyenv global 3.?
+
+## Install poetry - Manual
+#curl -sSL https://install.python-poetry.org | python -
+
+#echo 'export PATH="/home/cafesao/.local/bin:$PATH"' >> ~/.zshrc
 
 git config --global user.name "gabriel-dias-dutra"
 git config --global user.email "gabriel.dutra@sof.to"

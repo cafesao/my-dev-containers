@@ -1,0 +1,15 @@
+services:
+  golang:
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+      args:
+        USERNAME: cafesao
+    image: golang
+    user: cafesao
+    ports:
+      - 3000:3000
+    volumes:
+      - ..:/workspace:cached
+      - /home/cafesao/.ssh:/home/cafesao/.ssh:cached
+    command: sleep infinity

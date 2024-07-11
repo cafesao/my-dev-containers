@@ -35,6 +35,31 @@ echo "Disable wizard"
 echo 'POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true' >> ~/.zshrc
 echo '[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh' >> ~/.zshrc
 
+# Install NVM
+echo "Install NVM"
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+echo "Finish install NVM"
+
+# Export NVM for Docker
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+echo 'export NVM_DIR="$HOME/.nvm"' >> ~/.zshrc
+echo '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"' >> ~/.zshrc
+echo '[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"' >> ~/.zshrc
+
+# Install Node 
+echo "Install Node"
+nvm install --lts \
+&& nvm alias default --lts \
+&& nvm use default
+echo "Finish install Node"
+
+# Install NVM
+echo "Install Yarn"
+npm install --global yarn
+echo "Finish install Yarn"
+
 git config --global user.name "gabriel-dias-dutra"
 git config --global user.email "gabriel.dutra@sof.to"
 git config --global init.defaultBranch main

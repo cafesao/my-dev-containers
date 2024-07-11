@@ -1,0 +1,15 @@
+services:
+  auto-restore-db-api:
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+      args:
+        USERNAME: cafesao
+    image: auto-restore-db-api
+    user: cafesao
+    ports:
+      - 3000:3000
+    volumes:
+      - ..:/workspace:cached
+      - /home/cafesao/.ssh:/home/cafesao/.ssh:cached
+    command: sleep infinity

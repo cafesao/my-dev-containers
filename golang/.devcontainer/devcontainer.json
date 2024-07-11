@@ -1,0 +1,34 @@
+{
+  "name": "golang",
+  "dockerComposeFile": "./docker-compose.yml",
+  "service": "golang",
+  "workspaceFolder": "/workspace",
+  "features": {
+    "ghcr.io/devcontainers-contrib/features/neofetch:1": {},
+    "ghcr.io/devcontainers-contrib/features/wget-apt-get:1": {},
+    "ghcr.io/mikaello/devcontainer-features/modern-shell-utils:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "zsh",
+        "terminal.integrated.profiles.linux": { "zsh": { "path": "/bin/zsh" } }
+      },
+      "extensions": [
+        "eamodio.gitlens",
+        "JannisX11.batch-rename-extension",
+        "hoovercj.vscode-power-mode",
+        "rvest.vs-code-prettier-eslint",
+        "RobbOwen.synthwave-vscode",
+        "Gruntfuggly.todo-tree",
+        "GitHub.copilot",
+        "johnpapa.vscode-peacock"
+      ]
+    }
+  },
+  "forwardPorts": [3000],
+  "postCreateCommand": "sh ./.devcontainer/postCreateCommand.sh",
+  "remoteUser": "cafesao",
+  "containerUser": "cafesao",
+  "updateRemoteUserUID": true
+}

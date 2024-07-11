@@ -35,6 +35,22 @@ echo "Disable wizard"
 echo 'POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true' >> ~/.zshrc
 echo '[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh' >> ~/.zshrc
 
+## Install pyenv
+# curl https://pyenv.run | bash
+
+# echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshrc
+# echo '[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zshrc
+# echo 'eval "$(pyenv init -)"' >> ~/.zshrc
+
+## Install python 3.11 - Manual
+#pyenv install 3.11
+#pyenv global 3.11
+
+## Install poetry - Manual
+#curl -sSL https://install.python-poetry.org | python -
+
+#echo 'export PATH="/home/cafesao/.local/bin:$PATH"' >> ~/.zshrc
+
 git config --global user.name "gabriel-dias-dutra"
 git config --global user.email "gabriel.dutra@sof.to"
 git config --global init.defaultBranch main

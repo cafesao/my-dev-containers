@@ -1,0 +1,22 @@
+services:
+  cuda-devcontainer:
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+      args:
+        USERNAME: cafesao
+    image: cuda-devcontainer
+    user: cafesao
+    ports:
+      - 8001:8001
+    volumes:
+      - ..:/workspace:cached
+      - /home/cafesao/.ssh:/home/cafesao/.ssh:cached
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]    
+    runtime: nvidia
